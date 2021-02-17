@@ -1,0 +1,10 @@
+# clean up PHP code
+p=$1
+part1=`dirname "$p"`
+part2=`basename "$p"`
+o_p=$2
+
+echo $part1 $part2 ${o_p}/${part2}
+php -w $1 > php/${part2}
+PHP-Parser-master/bin/php-parse -p php/${part2} > ${o_p}/${part2}
+
